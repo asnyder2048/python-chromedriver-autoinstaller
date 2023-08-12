@@ -166,7 +166,7 @@ def get_chrome_version():
         try:
             dirs = [f.name for f in os.scandir("C:\\Program Files\\Google\\Chrome\\Application") if f.is_dir() and re.match("^[0-9.]+$", f.name)]
         except FileNotFoundError:
-            pass
+            dirs = None
         if dirs:
             version = max(dirs)
         else:
